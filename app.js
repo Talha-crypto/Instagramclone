@@ -5,6 +5,11 @@ const PORT = 5000
 const {MONGOURI}=require('./keys')
 
 require('./models/user')
+
+app.use(express.json())   // To parse data that is sent by user in JSON format. without it there will be error.
+app.use(require('./routes/auth'))
+
+
 mongoose.connect(MONGOURI)
 mongoose.connection.on('connected',()=>{
     console.log("Connected to the Database")
