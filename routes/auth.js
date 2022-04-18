@@ -8,7 +8,7 @@ const User=mongoose.model("User")
 const bcrypt=require("bcryptjs")
 
 
-router.get('/signup',(req,res)=>{
+router.post('/signup',(req,res)=>{
     const {name,email,password} = req.body
     if(!email || !password || !name)
     {
@@ -21,6 +21,7 @@ router.get('/signup',(req,res)=>{
         {
             return res.status(422).json({error:"User already exist with this Email"})
         }
+        //Encryption of password using BCRYPTJS package
         bcrypt.hash(password,12)
         .then(hashedpassword=>{
             const user =new User({
