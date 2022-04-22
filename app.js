@@ -4,11 +4,6 @@ const mongoose=require("mongoose")
 const PORT = 5000
 const {MONGOURI}=require('./keys')
 
-require('./models/user')
-
-app.use(express.json())   // To parse data that is sent by user in JSON format. without it there will be error.
-app.use(require('./routes/auth'))
-
 
 mongoose.connect(MONGOURI)
 mongoose.connection.on('connected',()=>{
@@ -18,6 +13,12 @@ mongoose.connection.on('error',(err)=>{
     console.log("Error! disconnected",err)
 })
 
+require('./models/user')
+require('./models/post')
+
+app.use(express.json())   // To parse data that is sent by user in JSON format. without it there will be error.
+app.use(require('./routes/auth'))
+app.use(require('./routes/post'))
 
 /*const custommiddleware = (req,res,next)=>{
  console.log("CustomMiddleware")  
