@@ -14,10 +14,10 @@ const postSchema= new mongoose.Schema({
         type:String,// we store image url thats why iage type string
         default:"no photo"
     },
-    postedby:{
+    postedBy:{
         type:ObjectId,//ID of the user posting images
         ref:"User"//it takes User model as reference
     }
 })
 
-mongoose.model("post",postSchema)
+mongoose.model("Post",postSchema)
