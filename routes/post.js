@@ -39,7 +39,7 @@ router.post('/createpost',requireLogin,(req,res)=>{
 
 router.get('/mypost',requireLogin,(req,res)=>{
     Post.find({postedBy:req.user._id})// this method is used to see post of user that is logged in
-    .populate("postedBy","_id name")
+    .populate("postedBy","_id")
     .then(mypost=>{
         res.json({mypost})
     })
