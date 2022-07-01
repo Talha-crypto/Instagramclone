@@ -14,21 +14,42 @@ function App() {
     <BrowserRouter>
     <div className="max-w-screen-md mx-auto pt-20">
       <NavBar />
-      <Routes>
-        <Route exact path="/" component={Home} />
+      <Routes >
+        <Route path="/" element={<Home/>} />
       </Routes>
-      <Routes>
-        <Route exact path="/login" component={Signin} />
+      <Routes >
+      <Route path="/signin" element={<Signin />} />
       </Routes>
-      <Routes>
-        <Route exact path="/profile" component={Profile} />
+      <Routes >
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
-      <Routes>
-        <Route exact path="/signup" component={Signup} />
+      <Routes >
+        <Route path="/signup" element={<Signup/>} />
       </Routes>
     </div>
   </BrowserRouter>
-  
+
+    // <BrowserRouter>
+
+    //   <NavBar />
+    //   <Routes>
+    //     <Route path="/">
+    //       <Home />
+    //     </Route>
+    //   </Routes>
+    //   <Route path="/signup">
+    //     <Signup />
+    //   </Route>
+    //   <Route path="/signin">
+    //     <Signin />
+    //   </Route>
+
+    //   <Route path="/profile">
+    //     <Profile />
+    //   </Route>
+
+    // </BrowserRouter>
+
   );
 }
 
