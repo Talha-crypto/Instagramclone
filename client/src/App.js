@@ -29,26 +29,6 @@ function App() {
     </div>
   </BrowserRouter>
 
-    // <BrowserRouter>
-
-    //   <NavBar />
-    //   <Routes>
-    //     <Route path="/">
-    //       <Home />
-    //     </Route>
-    //   </Routes>
-    //   <Route path="/signup">
-    //     <Signup />
-    //   </Route>
-    //   <Route path="/signin">
-    //     <Signin />
-    //   </Route>
-
-    //   <Route path="/profile">
-    //     <Profile />
-    //   </Route>
-
-    // </BrowserRouter>
 
   );
 }
