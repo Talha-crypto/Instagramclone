@@ -5,7 +5,7 @@ import NavBar from "./Components/Navbar"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Components/screens/Home'
 import Profile from "./Components/screens/Profile"
-import Signin from "./Components/screens/Login"
+import Signin from "./Components/screens/SignIn"
 import Signup from "./Components/screens/Signup"
 
 function App() {

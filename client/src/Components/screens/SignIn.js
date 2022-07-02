@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-const Signup = () => {
+
+const SignIn = () => {
     return (
         <div className="mycard">
             <div className="card auth-card input-field">
@@ -11,21 +12,17 @@ const Signup = () => {
                 />
                 <input
                     type="text"
-                    placeholder="Full Name"
-                />
-                <input
-                    type="text"
                     placeholder="password"
                 />
                 <button className="btn waves-effect waves-light #039be5 light-blue darken-1">
-                    SignUp
+                    Login
                 </button>
                 <h5>
-                    <Link to="/signin">Already have an account?</Link>
+                    <Link to="/signup">Don't have an account?</Link>
                 </h5>
             </div>
         </div>
     )
 }
 
-export default Signup
+export default SignIn
