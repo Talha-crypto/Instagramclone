@@ -7,6 +7,7 @@ import Home from './Components/screens/Home'
 import Profile from "./Components/screens/Profile"
 import Signin from "./Components/screens/SignIn"
 import Signup from "./Components/screens/Signup"
+import CreatePost from "./Components/screens/Createpost"
 
 function App() {
   return (
@@ -23,8 +24,11 @@ function App() {
       <Routes >
         <Route path="/profile" element={<Profile/>} />
       </Routes>
-      <Routes >
+      <Routes>
         <Route path="/signup" element={<Signup/>} />
+      </Routes>
+      <Routes>
+        <Route path="/createpost" element={<CreatePost/>} />
       </Routes>
     </div>
   </BrowserRouter>
