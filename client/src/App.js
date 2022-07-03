@@ -15,20 +15,13 @@ function App() {
     <BrowserRouter>
     <div className="max-w-screen-md mx-auto pt-20">
       <NavBar />
-      <Routes >
+      {/* Always use Routes as parent tag to define different Route. Specify one Routes tag then in that tag specify different many route you want to and close the Routes tag at the end */}
+      <Routes>
         <Route path="/" element={<Home/>} />
-      </Routes>
-      <Routes >
-      <Route path="/signin" element={<Signin />} />
-      </Routes>
-      <Routes >
-        <Route path="/profile" element={<Profile/>} />
-      </Routes>
-      <Routes>
-        <Route path="/signup" element={<Signup/>} />
-      </Routes>
-      <Routes>
-        <Route path="/createpost" element={<CreatePost/>} />
+        <Route path="/Signin" element={<Signin />} />
+        <Route path="/Profile" element={<Profile/>} />
+        <Route path="/Signup" element={<Signup/>} />
+        <Route path="/Createpost" element={<CreatePost/>} />
       </Routes>
     </div>
   </BrowserRouter>
