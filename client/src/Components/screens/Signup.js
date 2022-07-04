@@ -6,7 +6,7 @@ const Signup = () => {
     const [email,setEmail]=useState("")
     const [password,setPasswpord]=useState("")
     const Postdata=()=>{
-        fetch("http://localhost:5000/Signup",{
+        fetch("http://localhost:5000/Signup",{  // this causes error when tries to reach the sigup mathod. because both apps are running on different servers. to resolve this issue we make use of Proxying Api Requests in Development.
             method:"post",
             headers:{
                 "Content-Type":"application/json"
@@ -43,7 +43,7 @@ const Signup = () => {
                     onChange={(e)=>setPasswpord(e.target.value)}
                 />
                 <button className="btn waves-effect waves-light #64b5f6 light-blue darken-1"
-                onClick={()=>Postdata}
+                onClick={()=>Postdata()}
                 >
                     SignUp
                 </button>
