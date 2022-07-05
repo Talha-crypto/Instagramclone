@@ -1,16 +1,17 @@
 import React from 'react'
-import {Link,useHistory} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import M from 'materialize-css'
 
 const Signup = () => {
-    const history=useHistory()
+    const navigate = useNavigate();
     const [name,setName]=useState("")
     const [email,setEmail]=useState("")
     const [password,setPasswpord]=useState("")
     const Postdata=()=>{
         
-        if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email))
+        if(!(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(email))
         //Regular expression used for authenticating the email pattern from emailregix.com
         {
             M.toast({html: "Invalid Email",classes:"#c62828 red darken-3"})
@@ -32,7 +33,7 @@ const Signup = () => {
             }
             else{
                 M.toast({html:data.message,classes:"#2e7d32 green darken-3"})
-                history.push('/signin')  //The useHistory hook gives you access to the history instance that you may use to navigate.
+                navigate('/signin')  //The useHistory hook gives you access to the history instance that you may use to navigate.
             }
         })
     }
