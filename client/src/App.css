@@ -39,3 +39,10 @@ a{
     max-height: max-content;
     margin: 25px auto;
   }
+
+#toast-container{
+  color: #c62828 red;
+  top: 30px !important;
+  right: 20px !important;
+  left: auto !important;
+}

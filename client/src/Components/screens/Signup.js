@@ -1,23 +1,39 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link,useHistory} from 'react-router-dom'
 import { useState } from 'react'
+import M from 'materialize-css'
+
 const Signup = () => {
+    const history=useHistory()
     const [name,setName]=useState("")
     const [email,setEmail]=useState("")
     const [password,setPasswpord]=useState("")
     const Postdata=()=>{
+        
+        if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email))
+        //Regular expression used for authenticating the email pattern from emailregix.com
+        {
+            M.toast({html: "Invalid Email",classes:"#c62828 red darken-3"})
+            return
+        }
         fetch("http://localhost:5000/Signup",{  // this causes error when tries to reach the sigup mathod. because both apps are running on different servers. to resolve this issue we make use of Proxying Api Requests in Development.
             method:"post",
             headers:{
                 "Content-Type":"application/json"
             },body:JSON.stringify({
-                name:"",
-                email:"",
-                password:""
+                name,
+                email,
+                password
             })
         }).then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            if(data.error){
+                M.toast({html: data.error,classes:"#c62828 red darken-3"})
+            }
+            else{
+                M.toast({html:data.message,classes:"#2e7d32 green darken-3"})
+                history.push('/signin')  //The useHistory hook gives you access to the history instance that you may use to navigate.
+            }
         })
     }
     return (
@@ -47,8 +63,9 @@ const Signup = () => {
                 >
                     SignUp
                 </button>
+                {/* Provides declarative, accessible navigation routes around your application. */}
                 <h5>
-                    <Link to="/signin">Already have an account?</Link>
+                    <Link to="/signin">Already have an account?</Link> 
                 </h5>
             </div>
         </div>
