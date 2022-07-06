@@ -35,6 +35,8 @@ const Signup = () => {
                 M.toast({html:data.message,classes:"#2e7d32 green darken-3"})
                 navigate('/signin')  //The useHistory hook gives you access to the history instance that you may use to navigate.
             }
+        }).catch(err=>{
+            console.log(err)
         })
     }
     return (
