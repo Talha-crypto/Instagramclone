@@ -45,16 +45,17 @@ const Signup = () => {
                 <h2>Instagram</h2>
                 <input
                     type="text"
-                    placeholder="email"
-                    value={email}
-                    onChange={(e)=>setEmail(e.target.value)}
-                />
-                <input
-                    type="text"
                     placeholder="Full Name"
                     value={name}
                     onChange={(e)=>setName(e.target.value)}
                 />
+                <input
+                    type="text"
+                    placeholder="email"
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
+                />
+                
                 <input
                     type="text"
                     placeholder="password"

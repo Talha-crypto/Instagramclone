@@ -27,7 +27,7 @@ const SignIn = () => {
                 M.toast({html: data.error,classes:"#c62828 red darken-3"})
             }
             else{
-                M.toast({html:data.message,classes:"#2e7d32 green darken-3"})
+                M.toast({html:"Successfuly Signed-In",classes:"#2e7d32 green darken-3"})
                 navigate('/')  //The useHistory hook gives you access to the history instance that you may use to navigate.
             }
         }).catch(err=>{
