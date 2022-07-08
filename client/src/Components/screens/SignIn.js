@@ -10,13 +10,13 @@ const SignIn = () => {
     const [password,setPasswpord]=useState("")
     const Postdata=()=>{
         
-        if(!(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(email))
+        if(!(/^(([^<>(),;:\s@"]+(\.[^<>();:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(email))
         //Regular expression used for authenticating the email pattern from emailregix.com
         {
             M.toast({html: "Invalid Email",classes:"#c62828 red darken-3"})
             return
         }
-        fetch("http://localhost:5000/Signup",{  // this causes error when tries to reach the sigup mathod. because both apps are running on different servers. to resolve this issue we make use of Proxying Api Requests in Development.
+        fetch("http://localhost:5000/Signin",{  // this causes error when tries to reach the sigup mathod. because both apps are running on different servers. to resolve this issue we make use of Proxying Api Requests in Development.
             method:"post",
             headers:{
                 "Content-Type":"application/json"
@@ -53,7 +53,9 @@ const SignIn = () => {
                     value={password}
                     onChange={(e)=>setPasswpord(e.target.value)}
                 />  
-                <button className="btn waves-effect waves-light #64b5f6 light-blue darken-1">
+                <button className="btn waves-effect waves-light #64b5f6 light-blue darken-1"
+                onClick={()=>Postdata()}
+                >
                     Login
                 </button>
                 <h5>
