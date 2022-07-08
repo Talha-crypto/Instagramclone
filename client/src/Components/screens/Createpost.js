@@ -1,13 +1,43 @@
-import React from "react";
+import React,{useState} from "react";
 
 const Createpost = () =>{
-    return(<div className="card input-filed" style={{margin:"30px auto", maxWidth:"500px",padding:"15px",textAlign:"center"}}>
-        <input type="text" placeholder="title"/>
-        <input type="text" placeholder="body"/>
+  const [title,setTitle]=useState()
+  const [body,setBody]=useState()
+  const [image,setImage]=useState()
+
+  const postDetails= ()=>{
+    const data = new FormData()
+    data.append("file",image)
+    data.append("upload_preset","Insta-clone")
+    data.append("cloud_name","fastnu")
+    fetch
+  }
+
+    return(<div className="card input-filed" 
+    style={{
+      margin:"30px auto", 
+      maxWidth:"500px",
+      padding:"15px",
+      textAlign:"center"
+      }}>
+        <input type="text" 
+        placeholder="title"
+        value={title}
+        onChange={(e)=>{  // Will change the title input according to the values set by the user
+          setTitle(e.target.value)}}
+        />
+        <input type="text" 
+        placeholder="body"
+        value={body}
+        onChange={(e)=>{ // Will change the body input according to the values set by the user
+          setBody(e.target.value)}}
+        />
+
+        {/* e.target.files[0]    This files[0] is to access data stored in Array on 0th index */}
         <div class="file-field input-field">
       <div className="btn #64b5f6 light-blue darken-1">
         <span>Upload Image</span>
-        <input type="file"/>
+        <input type="file" onChange={(e)=>setImage(e.target.files[0])} />  
       </div>
       <div className="file-path-wrapper">
         <input class="file-path validate" type="text"/>
