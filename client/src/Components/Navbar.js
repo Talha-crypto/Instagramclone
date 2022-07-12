@@ -7,9 +7,9 @@ const NavBar =()=>{
     <div className="nav-wrapper white">
       <Link to="/" className="brand-logo left">Instagram</Link>
       <ul id="nav-mobile" className="right ">
-        <li><Link to="/signin">Login</Link></li>
+        <li><Link to="/signin">SignIn</Link></li>
         <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/signup">Sign-up</Link></li>
+        <li><Link to="/signup">SignUp</Link></li>
         <li><Link to="/createpost">Create Post</Link></li>
       </ul>
     </div>
