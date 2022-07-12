@@ -10,7 +10,7 @@ const Createpost = () =>{
     data.append("file",image)
     data.append("upload_preset","Insta-clone")
     data.append("cloud_name","fastnu")
-    fetch
+
   }
 
     return(<div className="card input-filed" 
@@ -43,7 +43,9 @@ const Createpost = () =>{
         <input class="file-path validate" type="text"/>
       </div>
     </div>
-    <button className="btn waves-effect waves-light #64b5f6 light-blue darken-1">
+    <button className="btn waves-effect waves-light #64b5f6 light-blue darken-1"
+    onClick={()=>postDetails()}
+    >
                     Submit post
                 </button>
 
