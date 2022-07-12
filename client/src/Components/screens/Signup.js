@@ -67,7 +67,7 @@ const Signup = () => {
                 >
                     SignUp
                 </button>
-                {/* Provides declarative, accessible navigation routes around your application. */}
+                {/*Link=> Provides declarative, accessible navigation routes around your application. */}
                 <h5>
                     <Link to="/signin">Already have an account?</Link> 
                 </h5>
