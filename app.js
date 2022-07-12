@@ -1,4 +1,5 @@
 const express = require('express')
+const cors= require('cors')
 const app = express()
 const mongoose=require("mongoose")
 const PORT = 5000
@@ -16,6 +17,9 @@ mongoose.connection.on('error',(err)=>{
 require('./models/user')
 require('./models/post')
 
+
+// Used CORS to allow data to be fetched by the Front-end.
+app.use(cors())
 app.use(express.json())   // To parse data that is sent by user in JSON format. without it there will be error.
 app.use(require('./routes/auth'))
 app.use(require('./routes/post'))
