@@ -11,7 +11,7 @@ const Createpost = () =>{
     data.append("upload_preset","Insta-clone")
     data.append("cloud_name","fastnu")
     
-    fetch("CLOUDINARY_URL=cloudinary://349463323368358:QpMLjaS1NsOG1VvKwS0b47-wOjM@fastnu/image/upload",{
+    fetch("https://cloudinary.com/console/c-e0a27ec884114dad869cf6c4977b23/media_library/folders/home/upload",{
       method:"post",
       body:data})
     .then(res=>res.json())
