@@ -10,7 +10,31 @@ const Createpost = () =>{
     data.append("file",image)
     data.append("upload_preset","Insta-clone")
     data.append("cloud_name","fastnu")
-
+    
+    cloudinary.v2.uploader.upload(image,
+  { 
+    upload_preset:"Ista-clone",
+    public_id:`${username}avatar`,
+    alowed_format:['png','jpg','jpeg','svg','ico','jfif','webp']
+   }, 
+  function(error, result) {
+  if(error){
+    console.log(error)
+  }
+    console.log(result); 
+    res.json("I have recieved your data")
+  });
+    
+    // fetch("CLOUDINARY_URL=cloudinary://349463323368358:QpMLjaS1NsOG1VvKwS0b47-wOjM@fastnu/image/upload",{
+    //   method:"post",
+    //   body:data})
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data)
+    })
+    .catch(err=>{
+      console.log(err)
+    })
   }
 
     return(<div className="card input-filed" 
@@ -34,13 +58,13 @@ const Createpost = () =>{
         />
 
         {/* e.target.files[0]    This files[0] is to access data stored in Array on 0th index */}
-        <div class="file-field input-field">
+        <div className="file-field input-field">
       <div className="btn #64b5f6 light-blue darken-1">
         <span>Upload Image</span>
         <input type="file" onChange={(e)=>setImage(e.target.files[0])} />  
       </div>
       <div className="file-path-wrapper">
-        <input class="file-path validate" type="text"/>
+        <input className="file-path validate" type="text"/>
       </div>
     </div>
     <button className="btn waves-effect waves-light #64b5f6 light-blue darken-1"
