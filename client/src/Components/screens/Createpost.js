@@ -11,23 +11,9 @@ const Createpost = () =>{
     data.append("upload_preset","Insta-clone")
     data.append("cloud_name","fastnu")
     
-    cloudinary.v2.uploader.upload(image,
-  { 
-    upload_preset:"Ista-clone",
-    public_id:`${username}avatar`,
-    alowed_format:['png','jpg','jpeg','svg','ico','jfif','webp']
-   }, 
-  function(error, result) {
-  if(error){
-    console.log(error)
-  }
-    console.log(result); 
-    res.json("I have recieved your data")
-  });
-    
-    // fetch("CLOUDINARY_URL=cloudinary://349463323368358:QpMLjaS1NsOG1VvKwS0b47-wOjM@fastnu/image/upload",{
-    //   method:"post",
-    //   body:data})
+    fetch("CLOUDINARY_URL=cloudinary://349463323368358:QpMLjaS1NsOG1VvKwS0b47-wOjM@fastnu/image/upload",{
+      method:"post",
+      body:data})
     .then(res=>res.json())
     .then(data=>{
       console.log(data)
