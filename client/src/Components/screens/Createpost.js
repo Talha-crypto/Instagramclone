@@ -17,7 +17,8 @@ const Createpost = () =>{
     
     fetch("https://cloudinary.com/console/c-e0a27ec884114dad869cf6c4977b23/media_library/folders/home/upload",{
       method:"post",
-      body:data})
+      body:data
+    })
     .then(res=>res.json())
     .then(data=>{
       setUrl(data.url)
@@ -29,7 +30,8 @@ const Createpost = () =>{
     fetch("http://localhost:5000/createpost",{  // this causes error when tries to reach the sigup mathod. because both apps are running on different servers. to resolve this issue we make use of Proxying Api Requests in Development.
             method:"post",
             headers:{
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                "Authorization":"Bear "+ localStorage.getItem("jwt")
             },body:JSON.stringify({
                 title,
                 body,

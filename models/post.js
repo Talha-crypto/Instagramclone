@@ -4,15 +4,15 @@ const {ObjectId} =mongoose.Schema.Types
 const postSchema= new mongoose.Schema({
     title:{
         type:String,
-        required:"true"
+        required:true
     },
     body:{
         type:String,
-        required:"true"
+        required:true
     },
     photos:{
         type:String,// we store image url thats why iage type string
-        default:"no photo"
+        required:true
     },
     postedBy:{
         type:ObjectId,//ID of the user posting images

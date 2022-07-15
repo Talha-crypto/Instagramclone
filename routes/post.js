@@ -16,8 +16,8 @@ router.get('/allpost',(req,res)=>{
 })
 
 router.post('/createpost',requireLogin,(req,res)=>{
-    const {title,body,picurl}= req.body
-    if(!title || !body || picurl){  // picurl is the link that cloudinary will provide after image gets uploaded there.
+    const {title,body,pic}= req.body
+    if(!title || !body || pic){  // picurl is the link that cloudinary will provide after image gets uploaded there.
         return res.status(422).json({error:"Post must have Title and Body"})
     }
     //Post saving func
@@ -27,7 +27,7 @@ router.post('/createpost',requireLogin,(req,res)=>{
     const posted =new Post({
         title,
         body,
-        picurl,
+        pic,
         postedBy:req.user
     })
     posted.save().then(result=>{
