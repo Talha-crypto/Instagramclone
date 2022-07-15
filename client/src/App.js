@@ -1,4 +1,4 @@
-import React,{useContext,useEffect} from "react";
+import React,{createContext,useEffect} from "react";
 import './Components/Navbar'
 import "./App.css";
 import NavBar from "./Components/Navbar"
@@ -9,7 +9,7 @@ import Signin from "./Components/screens/SignIn"
 import Signup from "./Components/screens/Signup"
 import CreatePost from "./Components/screens/Createpost"
 
-
+const UserContext= createContext()
 
 function App() {
   return (
