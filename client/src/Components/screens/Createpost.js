@@ -32,7 +32,7 @@ const Createpost = () => {
         }).catch(err => {
           console.log(err)
         })
-    }
+    } 
   }, [url]) // useEffect function will start working when the "URL" changes its state
 
   const postDetails = () => {

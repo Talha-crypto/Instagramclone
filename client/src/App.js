@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useContext,useEffect} from "react";
 import './Components/Navbar'
 import "./App.css";
 import NavBar from "./Components/Navbar"
@@ -8,6 +8,8 @@ import Profile from "./Components/screens/Profile"
 import Signin from "./Components/screens/SignIn"
 import Signup from "./Components/screens/Signup"
 import CreatePost from "./Components/screens/Createpost"
+
+
 
 function App() {
   return (
